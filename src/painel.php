@@ -7,4 +7,5 @@ if(empty($_SESSION['id'])){
 }
 
 echo "Olá ".$_SESSION['nome'].", Bem vindo <br>";
+echo "<a href='scans/painel.php?p=#'>Administração</a><br>";
 echo "<a href='sair.php'>Sair</a>";
