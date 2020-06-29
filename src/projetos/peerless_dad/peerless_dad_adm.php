@@ -53,7 +53,7 @@ $pg = $_GET['pg'];
 <?php
 if($pg == 'cadastrarcap'){?>
     <div class="content-fluid jumbotron">
-        <form enctype="multipart/form-data" method="POST" action="peerless_dad.php?pg=cadastrando">
+        <form enctype="multipart/form-data" method="POST" action="?pg=cadastrando">
             <label>Número do capitulo: </label>
             <input type="text" name="capitulo"><br><br>
             <label>Volume do capitulo: </label>
@@ -67,17 +67,19 @@ if($pg == 'cadastrarcap'){?>
 <?php
 }
 if($pg == 'cadastrando'){
+    var_dump($_POST);
     $projeto = $_SESSION['projeto'];
 	$capitulo = $_POST['capitulo'];
 	$volume = $_POST['volume'];
     $_UP['pasta'] = $capitulo.'/';
     mkdir($_UP['pasta'], 0777);
-	$diretorio = $capitulo.'/';
+    $diretorio = $capitulo.'/';
 	
 	$result = "INSERT INTO capitulos ( projeto, volume, numero, link) VALUES('peerless', $volume, $capitulo, 'projetos/peerless_dad/.$diretorio)";
 
 	if($resultado = mysqli_query($conn, $result)){
-		echo 'Capitulo cadastrado no banco de dados';
+        echo 'Capitulo cadastrado no banco de dados';
+        //não tá cadastrando
 	};
 	
 
@@ -92,10 +94,10 @@ if($pg == 'cadastrando'){
                 echo "Upload realizado com sucesso<br>"; 
             }else{
                 echo "Erro ao realizar upload";
+                //tratar erro corretamente
             }      
         }
     }
-echo "<a href='index.php'>Voltar</a></br></br>";
 }
 if($pg == 'apagarcap'){ 
     echo"<div class='content-fluid jumbotron'>";
