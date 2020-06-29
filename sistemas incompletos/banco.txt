@@ -32,17 +32,16 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nome` varchar(220) NOT NULL,
   `email` varchar(220) NOT NULL,
-  `usuario` varchar(220) NOT NULL,
   `senha` varchar(220) NOT NULL,
-  `cargo` text NOT NULL
+  `nivel` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `usuario`, `senha`, `cargo`) VALUES
-(1, 'Teste1', 'email@teste1.com', 'Teste1', '$2y$10$kbDmKrZZFLnW8JbmiYrVEOqzwEFzIxC1gWlzzepKiBreGk23xJ.8e', 'Admin');
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `nivel`) VALUES
+(1, 'Eliabe Guerreiro', '0000', '$2y$10$HTkPAlcGnFkwFcW.PCKw8OHZGOiseiTohH4Lw7Et2f60R4tN/bo7S', 'Administrador');
 
 --
 -- Índices para tabelas despejadas

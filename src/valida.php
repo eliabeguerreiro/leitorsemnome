@@ -12,9 +12,11 @@ if($btnLogin){
 		//Pesquisar o usuário no BD
 		$result_usuario = "SELECT id, nome, email, senha FROM usuarios WHERE email='$email' LIMIT 1";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
+		//var_dump(mysqli_fetch_array($resultado_usuario));
 		if($resultado_usuario){
+			$senha = password_hash($senha, PASSWORD_DEFAULT);
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
-			if(password_verify($senha, $row_usuario['senha'])){
+			if($senha = $row_usuario['senha']){
 				$_SESSION['id'] = $row_usuario['id'];
 				$_SESSION['nome'] = $row_usuario['nome'];
 				$_SESSION['email'] = $row_usuario['email'];

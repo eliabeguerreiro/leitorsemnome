@@ -1,6 +1,6 @@
 <?php
 
-	$servidor = "127.0.0.1:3308";
+	$servidor = "localhost:3308";
 	$usuario = "root";
 	$senha = "";
 	$dbname = "leitor";
