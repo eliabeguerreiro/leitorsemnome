@@ -9,7 +9,7 @@ $pagina = ($_GET['p']);
 echo "<h3><a href='?p=projetos'>Projetos</a></h3>";
 echo "<h3><a href='?p=cadproj'>Cadastrar Projeto</a></h3>";
 echo "<h3><a href='?p=perfil'>Perfil</a></h3>";
-echo "<h3><a href='?p=assumproj'>Perfil</a></h3>";
+echo "<h3><a href='?p=assumproj'>Assumir projeto</a></h3>";
 
 if ($pagina == 'projetos'){
     //é aqui onde se procura no banco quais projetos essa scan vai ter
